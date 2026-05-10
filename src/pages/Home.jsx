@@ -67,24 +67,45 @@ export default function Home() {
           </p>
           <h1 style={{ fontSize: '22px', marginTop: '2px' }}>Budget EAL</h1>
         </div>
-        <button
-          onClick={() => navigate('/registro')}
-          style={{
-            background: 'var(--accent)',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '50%',
-            width: '40px',
-            height: '40px',
-            fontSize: '22px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexShrink: 0,
-          }}
-        >
-          +
-        </button>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <button
+            onClick={async () => { await supabase.auth.signOut() }}
+            title="Cerrar sesión"
+            style={{
+              background: 'var(--bg-surface)',
+              color: 'var(--text-muted)',
+              border: '1px solid var(--border)',
+              borderRadius: '50%',
+              width: '36px',
+              height: '36px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+              cursor: 'pointer',
+            }}
+          >
+            <LogoutIcon />
+          </button>
+          <button
+            onClick={() => navigate('/registro')}
+            style={{
+              background: 'var(--accent)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '50%',
+              width: '40px',
+              height: '40px',
+              fontSize: '22px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+            }}
+          >
+            +
+          </button>
+        </div>
       </header>
 
       {/* Total del mes */}
@@ -427,6 +448,16 @@ function EditIcon({ size = 16, color = 'currentColor' }) {
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
       <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+    </svg>
+  )
+}
+
+function LogoutIcon({ size = 15, color = 'currentColor' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
     </svg>
   )
 }
