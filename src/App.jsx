@@ -21,7 +21,32 @@ export default function App() {
       setSession(session)
     })
 
-    return () => subscription.unsubscribe()
+    function handleVisibilityChange() {
+      if (document.visibilityState === 'hidden') {
+        sessionStorage.setItem('lastActiveTime', Date.now().toString())
+      } else {
+        const last = sessionStorage.getItem('lastActiveTime')
+        if (last) {
+          const minutesPassed = (Date.now() - Number(last)) / 60000
+          if (minutesPassed > 60) {
+            supabase.auth.signOut()
+          }
+        }
+      }
+    }
+
+    function handleBeforeUnload() {
+      supabase.auth.signOut()
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    window.addEventListener('beforeunload', handleBeforeUnload)
+
+    return () => {
+      subscription.unsubscribe()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+    }
   }, [])
 
   if (session === undefined) {
