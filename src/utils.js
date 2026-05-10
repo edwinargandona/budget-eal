@@ -7,6 +7,7 @@ export const CATEGORIAS = [
   { nombre: 'Casa/Servicios',            emoji: '🏠', color: 'var(--cat-casa)' },
   { nombre: 'Viaje',                     emoji: '✈️', color: 'var(--cat-viaje)' },
   { nombre: 'Membresías/Deportes',       emoji: '💪', color: 'var(--cat-membresias)' },
+  { nombre: 'Supermercado',              emoji: '🛒', color: 'var(--cat-supermercado)' },
   { nombre: 'Otros',                     emoji: '📦', color: 'var(--cat-otros)' },
 ]
 
