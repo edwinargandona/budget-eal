@@ -213,15 +213,15 @@ export default function Home() {
         paddingBottom: '24px',
         display: 'flex',
         flexDirection: 'column',
-        gap: '4px',
+        gap: '2px',
       }}>
-        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: '14px', color: '#ffffff' }}>
-          Made Myself
+        <p style={{ fontFamily: "'Sora', sans-serif", fontWeight: 500, fontSize: '14px', color: '#ffffff', lineHeight: 1.3, margin: 0 }}>
+          Made by Yourself
         </p>
-        <p style={{ fontSize: '12px', color: '#6B7B6F' }}>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#6B7B6F', lineHeight: 1.3, margin: 0 }}>
           Powered by EAL 🇧🇴
         </p>
-        <p style={{ fontSize: '12px', color: '#34D399', fontStyle: 'italic' }}>
+        <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '11px', color: '#34D399', fontStyle: 'italic', lineHeight: 1.3, margin: 0 }}>
           Limitless by choice
         </p>
       </div>
