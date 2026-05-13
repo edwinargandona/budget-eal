@@ -14,10 +14,6 @@ export default function App() {
   const [showSplash, setShowSplash] = useState(true)
   const [session, setSession] = useState(undefined)
 
-  if (showSplash) {
-    return <SplashScreen onFinish={() => setShowSplash(false)} />
-  }
-
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
@@ -54,6 +50,10 @@ export default function App() {
       window.removeEventListener('beforeunload', handleBeforeUnload)
     }
   }, [])
+
+  if (showSplash) {
+    return <SplashScreen onFinish={() => setShowSplash(false)} />
+  }
 
   if (session === undefined) {
     return (
