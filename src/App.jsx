@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { supabase } from './supabase'
 import BottomNav from './components/BottomNav'
+import SplashScreen from './components/SplashScreen'
 import Home from './pages/Home'
 import Registro from './pages/Registro'
 import Resumen from './pages/Resumen'
@@ -10,7 +11,12 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 
 export default function App() {
+  const [showSplash, setShowSplash] = useState(true)
   const [session, setSession] = useState(undefined)
+
+  if (showSplash) {
+    return <SplashScreen onFinish={() => setShowSplash(false)} />
+  }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
