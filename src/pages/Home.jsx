@@ -68,7 +68,6 @@ export default function Home() {
           <h1 style={{ fontSize: '22px', marginTop: '2px' }}>
             <span style={{ color: 'var(--text-h)' }}>my.</span>
             <span style={{ color: 'var(--accent)' }}>budget</span>
-            <span style={{ color: 'var(--text-h)' }}> EAL</span>
           </h1>
         </div>
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>

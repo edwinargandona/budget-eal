@@ -32,15 +32,28 @@ export default function Logo({ size = 120, showText = true }) {
       </svg>
 
       {showText && (
-        <div style={{
-          fontFamily: "'DM Sans', system-ui, sans-serif",
-          fontWeight: 500,
-          fontSize: `${14 * scale}px`,
-          letterSpacing: '0.2px',
-          lineHeight: 1,
-        }}>
-          <span style={{ color: '#ffffff' }}>my.</span>
-          <span style={{ color: '#34D399' }}>budget</span>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+          <div style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 500,
+            fontSize: `${14 * scale}px`,
+            letterSpacing: '0.2px',
+            lineHeight: 1,
+          }}>
+            <span style={{ color: '#ffffff' }}>my.</span>
+            <span style={{ color: '#34D399' }}>budget</span>
+          </div>
+          <div style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontWeight: 400,
+            fontSize: `${10 * scale}px`,
+            letterSpacing: '3px',
+            textTransform: 'uppercase',
+            color: '#6B7B6F',
+            lineHeight: 1,
+          }}>
+            EAL
+          </div>
         </div>
       )}
     </div>

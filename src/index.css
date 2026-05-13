@@ -25,11 +25,14 @@
   --cat-supermercado: #34D399;
   --cat-otros: #6b7280;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --sans: var(--font-display);
+  --mono: var(--font-mono);
   --nav-height: 68px;
 
-  font: 16px/150% var(--sans);
+  font: 16px/150% var(--font-body);
   letter-spacing: 0.1px;
   color: var(--text);
   background: var(--bg);
