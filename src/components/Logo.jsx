@@ -36,7 +36,7 @@ export default function Logo({ size = 120, showText = true }) {
           <div style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 500,
-            fontSize: `${14 * scale}px`,
+            fontSize: `${16.8 * scale}px`,
             letterSpacing: '0.2px',
             lineHeight: 1,
           }}>
@@ -46,7 +46,7 @@ export default function Logo({ size = 120, showText = true }) {
           <div style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontWeight: 400,
-            fontSize: `${10 * scale}px`,
+            fontSize: `${12 * scale}px`,
             letterSpacing: '3px',
             textTransform: 'uppercase',
             color: '#6B7B6F',
