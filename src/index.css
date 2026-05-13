@@ -1,14 +1,16 @@
 :root {
-  --bg: #0A0F0D;
-  --bg-surface: #111814;
-  --bg-card: #191F1C;
+  --bg: #080C0B;
+  --bg-surface: #0F1513;
+  --bg-card: #161D1A;
   --border: #1e2b26;
   --text: #9ca3af;
   --text-h: #f3f4f6;
   --text-muted: #6b7280;
-  --accent: #10B981;
-  --accent-bg: rgba(16, 185, 129, 0.15);
-  --accent-border: rgba(16, 185, 129, 0.3);
+  --accent: #34D399;
+  --accent-dark: #059669;
+  --accent-light: #A7F3D0;
+  --accent-bg: rgba(52, 211, 153, 0.15);
+  --accent-border: rgba(52, 211, 153, 0.3);
   --success: #22c55e;
   --danger: #ef4444;
 
@@ -20,7 +22,7 @@
   --cat-casa: #eab308;
   --cat-viaje: #06b6d4;
   --cat-membresias: #ef4444;
-  --cat-supermercado: #10b981;
+  --cat-supermercado: #34D399;
   --cat-otros: #6b7280;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;

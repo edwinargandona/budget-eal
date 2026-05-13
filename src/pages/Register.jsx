@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../supabase'
+import Logo from '../components/Logo'
 
 export default function Register() {
   const navigate = useNavigate()
@@ -97,12 +98,12 @@ export default function Register() {
     }}>
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '36px' }}>
+        <div style={{ marginBottom: '16px' }}>
+          <Logo size={80} showText={true} />
+        </div>
         <h1 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-h)' }}>
           Crear cuenta
         </h1>
-        <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginTop: '6px' }}>
-          Budget EAL
-        </p>
       </div>
 
       {/* Formulario */}

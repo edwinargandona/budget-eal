@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../supabase'
+import Logo from '../components/Logo'
 
 const ERRORES = {
   'Invalid login credentials': 'Email o contraseña incorrectos.',
@@ -47,27 +48,8 @@ export default function Login() {
     }}>
       {/* Logo */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <div style={{
-          width: '72px', height: '72px',
-          borderRadius: '22px',
-          background: 'var(--accent)',
-          display: 'flex', alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '34px',
-          margin: '0 auto 16px',
-          boxShadow: '0 8px 32px rgba(16,185,129,0.35)',
-        }}>
-          💰
-        </div>
-        <h1 style={{
-          fontSize: '28px',
-          fontWeight: 700,
-          color: 'var(--text-h)',
-          letterSpacing: '-0.5px',
-        }}>
-          Budget EAL
-        </h1>
-        <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginTop: '6px' }}>
+        <Logo size={100} showText={true} />
+        <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginTop: '14px' }}>
           Controlá tus gastos
         </p>
       </div>
