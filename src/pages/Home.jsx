@@ -206,6 +206,26 @@ export default function Home() {
         </div>
       )}
 
+      {/* Footer */}
+      <div style={{
+        textAlign: 'center',
+        paddingTop: '32px',
+        paddingBottom: '24px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '4px',
+      }}>
+        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: '14px', color: '#ffffff' }}>
+          Made Myself
+        </p>
+        <p style={{ fontSize: '12px', color: '#6B7B6F' }}>
+          Powered by EAL 🇧🇴
+        </p>
+        <p style={{ fontSize: '12px', color: '#34D399', fontStyle: 'italic' }}>
+          Limitless by choice
+        </p>
+      </div>
+
       {/* Modal confirmar eliminar */}
       {pendingDelete && (
         <ModalEliminar
