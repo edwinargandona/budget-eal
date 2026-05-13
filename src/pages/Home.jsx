@@ -11,8 +11,6 @@ export default function Home() {
   const navigate = useNavigate()
 
   const ahora = new Date()
-  const inicioMes = new Date(ahora.getFullYear(), ahora.getMonth(), 1).toISOString().split('T')[0]
-  const finMes = new Date(ahora.getFullYear(), ahora.getMonth() + 1, 0).toISOString().split('T')[0]
 
   useEffect(() => {
     fetchGastos()
@@ -20,11 +18,11 @@ export default function Home() {
 
   async function fetchGastos() {
     setLoading(true)
+    const desde = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
     const { data } = await supabase
       .from('Gastos')
       .select('*')
-      .gte('fecha', inicioMes)
-      .lte('fecha', finMes)
+      .gte('fecha', desde)
       .order('fecha', { ascending: false })
     setGastos(data || [])
     setLoading(false)
@@ -170,7 +168,7 @@ export default function Home() {
 
       {/* Últimos gastos */}
       <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <p className="label">Últimos gastos</p>
+        <p className="label">Últimos 7 días</p>
         <p style={{ fontSize: '11px', color: 'var(--text-muted)' }}>← deslizá para editar</p>
       </div>
 
@@ -179,7 +177,7 @@ export default function Home() {
       ) : ultimos.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '40px 20px', color: 'var(--text-muted)' }}>
           <div style={{ fontSize: '40px', marginBottom: '10px' }}>💸</div>
-          <p>Sin gastos este mes</p>
+          <p>Sin gastos en los últimos 7 días</p>
           <button
             onClick={() => navigate('/registro')}
             style={{
